@@ -104,7 +104,7 @@ export default function Show({ meme, index, count, nextMeme }) {
         {vote === null ? null : (
           <a
             onClick={saveVote}
-            className="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-purple-700 hover:bg-purple-700 text-gray-100 hover:text-white font-normal py-2 px-4 rounded block text-center cursor-pointer"
+            className="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-purple-700 hover:bg-purple-700 dark:text-gray-100 text-gray-700 hover:text-white font-normal py-2 px-4 rounded block text-center cursor-pointer"
             style={{ margin: "30px auto", width: "150px" }}
           >
             {nextMeme ? "Suivant" : "Terminer"}

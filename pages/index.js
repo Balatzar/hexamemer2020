@@ -25,7 +25,7 @@ export default function IndexPage({ firstMeme }) {
         </p>
         <Link href={`/memes/${firstMeme.id}`}>
           <a
-            className="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-purple-700 hover:bg-purple-700 text-gray-100 hover:text-white font-normal py-2 px-4 rounded block text-center"
+            className="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-purple-700 hover:bg-purple-700 dark:text-gray-100 text-gray-700 hover:text-white font-normal py-2 px-4 rounded block text-center"
             style={{ margin: "30px auto", width: "150px" }}
           >
             Commencer
