@@ -32,12 +32,22 @@ export async function getStaticProps({ params }) {
 export default function Show({ meme, index, count, nextMeme }) {
   const [vote, setVote] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingImage, setLoadingImage] = useState(true);
   const router = useRouter();
   const { width, height, url } = meme.image[0].thumbnails.large;
+
   useEffect(() => {
     setVote(null);
     setLoading(false);
+    setLoadingImage(true);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
   }, [index]);
+
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+  }, [vote]);
 
   const saveVote = async (e) => {
     e.preventDefault();
@@ -54,13 +64,12 @@ export default function Show({ meme, index, count, nextMeme }) {
     const res = await fetch(`/api/memes`, query);
     const data = await res.json();
 
-    setLoading(false);
-
     if (res.status === 200) {
       const url = nextMeme ? `/memes/${nextMeme.id}` : `/end`;
       router.push(url);
     } else {
       console.warn(data);
+      setLoading(false);
       alert(
         "Impossible de sauvegarder votre vote. Consultez la console JS pour plus d'information."
       );
@@ -74,7 +83,16 @@ export default function Show({ meme, index, count, nextMeme }) {
           {index + 1}/{count}
         </h1>
         <div className="mx-auto my-0" style={{ width }}>
-          <Image src={url} width={width} height={height} />
+          <div style={loadingImage ? { opacity: 0 } : {}}>
+            <Image
+              src={url}
+              width={width}
+              height={height}
+              onLoad={() => {
+                setLoadingImage(false);
+              }}
+            />
+          </div>
         </div>
         <div
           className="flex justify-between mx-auto my-0"

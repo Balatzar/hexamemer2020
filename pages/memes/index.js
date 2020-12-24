@@ -14,7 +14,7 @@ export async function getStaticProps() {
 export default function Index({ allMemes }) {
   return (
     <div>
-      <div className="py-20">
+      <div>
         <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
           Le cru 2020
         </h1>

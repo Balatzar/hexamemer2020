@@ -22,7 +22,7 @@ export async function createVote(memeId, note) {
 }
 
 export async function fetchMemes() {
-  if (process.env.AIRPLANE_MODE) {
+  if (process.env.AIRPLANE_MODE == 1) {
     return JSON.parse(fs.readFileSync("services/airtable/data.json"));
   }
   const memes = [];
@@ -30,7 +30,7 @@ export async function fetchMemes() {
     .select({
       maxRecords: 100,
       view: "Grid view",
-      sort: [{ field: "Date postage", direction: "asc" }],
+      sort: [{ field: "Random", direction: "asc" }],
     })
     .eachPage(function page(records, fetchNextPage) {
       records.forEach(function (record) {

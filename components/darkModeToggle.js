@@ -30,7 +30,7 @@ export default function DarkModeToggle() {
   }, [toggled]);
 
   return (
-    <div className="flex items-center justify-center w-full mb-24">
+    <div className="flex items-center justify-center w-full mb-4">
       <label htmlFor="toogleA" className="flex items-center cursor-pointer">
         <div className="relative">
           <input
