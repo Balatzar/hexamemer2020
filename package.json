@@ -4,11 +4,13 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "airtable": "^0.10.1",
     "next": "latest",
+    "next-on-netlify": "^2.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
