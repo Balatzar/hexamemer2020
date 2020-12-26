@@ -29,7 +29,7 @@ export async function fetchMemes() {
   await base("Memes")
     .select({
       maxRecords: 100,
-      view: "Grid view",
+      view: "Data",
       sort: [{ field: "Random", direction: "asc" }],
     })
     .eachPage(function page(records, fetchNextPage) {
