@@ -66,7 +66,9 @@ export default function Show({ meme, index, count, nextMeme }) {
 
     if (res.status === 200) {
       const url = nextMeme ? `/memes/${nextMeme.id}` : `/end`;
-      router.push(url);
+      setTimeout(() => {
+        router.push(url);
+      }, 1000);
     } else {
       console.warn(data);
       setLoading(false);
