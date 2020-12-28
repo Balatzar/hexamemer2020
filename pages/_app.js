@@ -27,6 +27,12 @@ function MyApp({ Component, pageProps }) {
           content="Hexamemer 2020"
           key="ogsitename"
         />
+        <script
+          async
+          defer
+          data-domain="hexamemer2020.vercel.app"
+          src="https://plausible.io/js/plausible.js"
+        ></script>
       </Head>
       <DarkModeToggle />
       <Component {...pageProps} />
