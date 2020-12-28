@@ -5,7 +5,7 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 );
 
 export async function createVote(memeId, note) {
-  if (process.env.AIRPLANE_MODE) {
+  if (process.env.AIRPLANE_MODE == 1) {
     return true;
   }
 

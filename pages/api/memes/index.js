@@ -4,7 +4,8 @@ const handler = async (req, res) => {
   try {
     const { id, vote } = JSON.parse(req.body);
 
-    createVote(id, vote);
+    const resp = await createVote(id, vote);
+    console.log(resp);
 
     res.status(200).json({ ok: true });
   } catch (error) {
